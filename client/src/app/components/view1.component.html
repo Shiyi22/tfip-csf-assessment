@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td>
+                <input type="text" formControlName="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Title: </td>
+            <td>
+                <input type="text" formControlName="title">
+            </td>
+        </tr>
+        <tr>
+            <td>Comments: </td>
+            <td>
+                <textarea formControlName="comments" cols="30" rows="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Archive: </td>
+            <td>
+                <input type="file" accept=".zip" #zipFile formControlName="archive">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" routerLink="['/']">Cancel</button>
+            </td>
+            <td>
+                <button type="submit" [disabled]="form.invalid">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,16 @@
+<div *ngIf="bundleLoaded">
+    <h1 style="font-size: xx-large  ;">{{ bundle.title }}</h1>
+
+    <h3>by {{ bundle.name}} on {{ bundle.date}} </h3>
+    
+    <span *ngIf="bundle.comments != undefined">{{ bundle.comments}}</span>
+    
+    <ul *ngFor="let url of bundle.urls">
+        <li>
+            <img src="{{url}}" width="200px">
+        </li>
+    </ul>
+    
+    <button type="button" routerLink="['/']">Back</button>
+</div>
+

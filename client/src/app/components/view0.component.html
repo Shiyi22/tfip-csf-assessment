@@ -1,0 +1,13 @@
+<h1>Photo Storage</h1>
+
+<button type="button" [routerLink]="['/upload']">Upload</button>
+<br>
+<br>
+<table *ngIf="bundlesLoaded" >
+    <tr *ngFor="let bundle of bundles" [routerLink]="['/display', bundle.bundleId]">
+        <td>{{ bundle.title}}</td>
+        <td></td>
+        <td></td>
+        <td>{{ bundle.date}}</td>
+    </tr>
+</table>
